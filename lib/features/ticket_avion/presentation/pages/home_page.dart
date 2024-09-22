@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import '../provider/ticket_provider.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
                 title: Text(ticket.flightNumber),
                 subtitle: Text('${ticket.airline} - ${ticket.passengerInfo}'),
                 trailing: IconButton(
-                  icon: Icon(Icons.delete),
+                  icon: const Icon(Icons.delete),
                   onPressed: () {
                     provider.deleteTicket(ticket.id);
                   },

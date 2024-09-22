@@ -20,7 +20,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   final TicketUseCase ticketUseCase;
 
-  const MyApp({Key? key, required this.ticketUseCase}) : super(key: key);
+  const MyApp({super.key, required this.ticketUseCase});
 
   @override
   Widget build(BuildContext context) {

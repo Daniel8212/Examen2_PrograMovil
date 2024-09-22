@@ -5,6 +5,7 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
+import 'package:examen_programovil_2/features/ticket_avion/domain/usecases/ticket_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -14,7 +15,7 @@ void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
    
-    await tester.pumpWidget(MyApp(ticketUseCase: ticketUseCase));
+    await tester.pumpWidget(const MyApp(ticketUseCase: TicketUseCase)); //ticketUseCase
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

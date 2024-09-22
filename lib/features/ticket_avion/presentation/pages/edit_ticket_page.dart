@@ -5,7 +5,7 @@ import '../provider/ticket_provider.dart';
 class EditTicketPage extends StatefulWidget {
   final String ticketId;
 
-  const EditTicketPage({required this.ticketId, Key? key}) : super(key: key);
+  const EditTicketPage({required this.ticketId, super.key});
 
   @override
   _EditTicketPageState createState() => _EditTicketPageState();
@@ -28,12 +28,25 @@ class _EditTicketPageState extends State<EditTicketPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Editar Ticket')),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [TextField(controller: flightNumberController)
-            ]);
-            
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(title: const Text('Editar Ticket')),
+    body: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          TextField(
+            controller: flightNumberController,
+            decoration: const InputDecoration(
+              labelText: 'Número de vuelo',  // Etiqueta para el campo
+              border: OutlineInputBorder(), // Borde del campo
+            ),
+          ),
+          const SizedBox(height: 10),  // Espacio entre el TextField y los siguientes elementos
+          // Puedes agregar más widgets aquí
+        ],
+      ),
+    ),
+  );
+}
+}
